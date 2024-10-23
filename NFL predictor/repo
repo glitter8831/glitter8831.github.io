@@ -1,0 +1,77 @@
+<!-- <body>  
+    <div class="odds-page">
+        <div class="odds-flexbox">
+            <div class="odds-title"> 
+                <h1> Odds </h1>
+            </div>
+            <form method="POST" action="odds"> 
+                {{ form.hidden_tag() }}  
+                <div> {{ form.home_team.label }} </div>
+                <div> {{ form.home_team() }} </div> 
+                <div> {{ form.away_team.label }} </div> 
+                <div> {{ form.away_team() }} </div> 
+                <input type="hidden" name="form_type" value="odds">
+                <div> {{ form.submit() }} </div>
+            </form>  
+
+            <div>
+                {% if winning_prob is not none and xpf is not none and xpa is not none %}
+                    {% if home_team != away_team %}
+                        <h1>Winning Probability: {{ winning_prob }}%</h1>
+                        <h1>Predicted Points For (XPF): {{ xpf }}</h1>
+                        <h1>Predicted Points Against (XPA): {{ xpa }}</h1>
+                    {% else %}
+                        <h1>The home team and away team cannot be the same.</h1>
+                    {% endif %}
+                {% else %}
+                    <h1>Please submit the form to see the predictions.</h1>
+                {% endif %}
+            </div> 
+        </div> 
+
+        <div class="n-odds-flexbox">   
+            <div class="n-odds-title"> 
+                <h1> Neutral Odds </h1>
+            <form method="POST"> 
+                {{ nform.hidden_tag() }}  
+                <div> {{ nform.nhome_team.label }} </div>
+                <div> {{ nform.nhome_team() }} </div> 
+                <div> {{ nform.naway_team.label }} </div> 
+                <div> {{ nform.naway_team() }} </div> 
+                <input type="hidden" name="form_type" value="n_odds">
+                <div> {{ nform.nsubmit() }} </div>
+            </form> 
+
+            <div>
+                {% if nwinning_prob is not none and nxpf is not none and nxpa is not none %}
+                    {% if nhome_team != naway_team %}
+                        <h1>Winning Probability: {{ nwinning_prob }}%</h1>
+                        <h1>Predicted Points For (XPF): {{ nxpf }}</h1>
+                        <h1>Predicted Points Against (XPA): {{ nxpa }}</h1>
+                    {% else %}
+                        <h1>The home team and away team cannot be the same.</h1>
+                    {% endif %}
+                {% else %}
+                    <h1>Please submit the form to see the predictions.</h1>
+                {% endif %}
+            </div> 
+        </div> 
+    </div>
+
+    
+</body> --> 
+
+
+<h1>  
+    The displayed odds are derived from comprehensive data analysis 
+    of the 2023 NFL season. We calculate average points scored and 
+    given up for both home and away teams. A sophisticated logistic 
+    regression model employs gradient descent to determine the optimal 
+    weights for these inputs, which results in expected points for (XPF),
+    expected points against (XPA), and accounts for home field 
+    advantage. Subsequently, another logistic regression model 
+    applies the sigmoid function to XPF and XPA to predict the 
+    probability of the home team winning. The model's performance is 
+    evaluated against actual game results, ensuring its reliability.
+</h1>
+
